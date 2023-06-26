@@ -126,7 +126,7 @@ app.get(
 
 //api4
 
-app.ger("/user/following/", authenticationToken, async (request, response) => {
+app.get("/user/following/", authenticationToken, async (request, response) => {
   let { username } = request;
   const getUserIdQuery = `select user_id from user where username = '${username}';`;
   const getUserId = await database.get(getUserIdQuery);
@@ -147,7 +147,7 @@ app.ger("/user/following/", authenticationToken, async (request, response) => {
 
 //api5
 
-api.get("/user/followers/", authenticationToken, async (request, response) => {
+app.get("/user/followers/", authenticationToken, async (request, response) => {
   let { username } = request;
   const getUserIdQuery = `select user_id from user where username = '${username}';`;
   const getUserId = await database.get(getUserIdQuery);

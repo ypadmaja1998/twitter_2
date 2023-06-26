@@ -286,7 +286,7 @@ app.get(
       return eachFollower.following_user_id;
     });
     console.log(getFollowingIds);
-
+git branch -M main
     const getTweetIdsQuery = `select tweet_id from tweet where user_id in (${getFollowingIds});`;
     const getTweetIdsArray = await database.all(getTweetIdsQuery);
     const getTweetIds = getTweetIdsArray.map((eachTweet) => {
